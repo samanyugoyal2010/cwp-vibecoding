@@ -1,0 +1,16 @@
+{
+  "name": "GameHub - Classic Games Platform",
+  "short_name": "GameHub",
+  "description": "Play classic games offline - Dinosaur Runner, Wordle, and Hangman",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1F2937",
+  "theme_color": "#8B5CF6",
+  "icons": [
+    {
+      "src": "/gamepad.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

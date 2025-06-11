@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.game-card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.button-primary {
+  @apply bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95;
+}
+
+.button-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-medium py-3 px-6 rounded-lg transition-all duration-200;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600;
+}
+
+/* Smooth theme transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .game-card {
+    @apply border-2 border-gray-900 dark:border-white;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Game-specific styles */
+.dino-game-canvas {
+  @apply border-2 border-gray-300 dark:border-gray-600 rounded-lg;
+}
+
+.wordle-tile {
+  @apply w-12 h-12 border-2 border-gray-300 dark:border-gray-600 rounded-md flex items-center justify-center font-bold text-lg transition-all duration-300;
+}
+
+.wordle-tile.correct {
+  @apply bg-green-500 border-green-500 text-white;
+}
+
+.wordle-tile.present {
+  @apply bg-yellow-500 border-yellow-500 text-white;
+}
+
+.wordle-tile.absent {
+  @apply bg-gray-500 border-gray-500 text-white;
+}
+
+.hangman-drawing {
+  @apply stroke-current text-gray-800 dark:text-gray-200;
+}
